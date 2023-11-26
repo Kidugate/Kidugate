@@ -180,7 +180,7 @@ function loadChildren() {
               gender: "Male",
               email: "ahmad@example.com",
               phone: "1234567890",
-              image: "Images/default-boy-image.jpg"
+              image: "Images/kid.png"
           },
           {
               name: "Sara",
@@ -188,7 +188,7 @@ function loadChildren() {
               gender: "Female",
               email: "sara@example.com",
               phone: "9876543210",
-              image: "Images/default-girl-image.jpg"
+              image: "Images/kid2.png"
           }
       ];
 

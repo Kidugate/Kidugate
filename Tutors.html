@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tutors</title>
+    <link id="stylesheet" rel="stylesheet" href="Style.css">
+<script src="js.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* Add some basic styling for better presentation */
+        .sectiion {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .sectiion__item {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="SSBB">  
+         
+        <div class="search">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <input type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button> 
+  </div>  
+  &nbsp  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <button id="switchButton" onclick="darkmode()">
+  <i id="icon" class="fas fa-moon"></i> 
+</button>
+
+  </div>
+    <img src="Images/Kidugate.png" width="100" height="100" alt="logo">
+    <h1>Kidugate</h1>
+
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><div class="c1"><a href="HomePage.html">Home </a></div></li>
+                <li><a href="Courses.html">Courses </a> </li>
+                <li><a href="Tutors.html" id="clicked">Tutors </a></li>
+                <li><a href="Admin.html">Admin </a></li>
+                <li><a href="Parent.html">Parent</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <div class="path">
+        <ul>
+            <li><a href="HomePage.html">Home </a>><a href="Admin.html"> Tutors </a> </li>
+        </ul>
+    </div>
+
+    <h2 style="text-indent:1%;"> Tutors </h2>
+
+    <!-- Add a dropdown for sorting -->
+    <label for="sortOrder">Sort Tutors:</label>
+    <select id="sortOrder" onchange="sortTutors()">
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+    </select>
+
+    <label for="filterBy">Filter By:</label>
+    <select id="filterBy" onchange="updateCourses()">
+        <option value="all">All Tutors</option>
+        <!-- Add other filter options as needed -->
+    </select>
+
+    <div class="BigTutorsContainer">
+        <div class="horizontal-scroll-container">
+            <div class="sectiion">
+
+                <!-- Add unique IDs to each tutor item for easier manipulation -->
+                <div class="sectiion__item" data-tutor="T.Mohammed"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Mohammed</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Maha"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Maha</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Nasser"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Nasser</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Sara"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Sara</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Faris"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Faris</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Lamya"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Lamya</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Khalid"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Khalid</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Norah"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Norah</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Adel"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Adel</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Wejoud"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Wejoud</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Eyad"><img src="Images/tut11.png" width="100" height="100" alt="tutor"><h3>T.Eyad</h3>Lorem ipsum</div>
+                <div class="sectiion__item" data-tutor="T.Manal"><img src="Images/tut22.png" width="100" height="100" alt="tutor"><h3>T.Manal</h3>Lorem ipsum</div>
+
+                <!-- Add more tutors as needed -->
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sortTutors() {
+            var sortOrder = document.getElementById('sortOrder').value;
+            var tutorContainer = document.querySelector('.sectiion');
+            var tutors = Array.from(tutorContainer.getElementsByClassName('sectiion__item'));
+
+            tutors.sort(function (a, b) {
+                var nameA = a.querySelector('h3').textContent.trim().toUpperCase();
+                var nameB = b.querySelector('h3').textContent.trim().toUpperCase();
+
+                if (sortOrder === 'asc') {
+                    return nameA.localeCompare(nameB);
+                } else if (sortOrder === 'desc') {
+                    return nameB.localeCompare(nameA);
+                }
+            });
+
+            // Clear the current list
+            tutorContainer.innerHTML = '';
+
+            // Append the sorted tutors to the list
+            tutors.forEach(function (tutor) {
+                tutorContainer.appendChild(tutor);
+            });
+        }
+
+        function updateCourses() {
+            var filterBy = document.getElementById('filterBy').value;
+            var tutorContainer = document.querySelector('.sectiion');
+            var tutors = tutorContainer.getElementsByClassName('sectiion__item');
+
+            // Reset the display for all tutors
+            Array.from(tutors).forEach(function (tutor) {
+                tutor.style.display = 'flex';
+            });
+
+            // Check if filtering is needed
+            if (filterBy !== 'all') {
+                // Hide tutors that don't match the selected filter
+                Array.from(tutors).forEach(function (tutor) {
+                    var tutorName = tutor.getAttribute('data-tutor');
+                    if (tutorName !== filterBy) {
+                        tutor.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
+
+</main>
+
+<footer>
+
+    <ul>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="Policy&Terms.html">Policy & Terms </a></li>
+        <li><a href="ContactUs.html">Contact Us </a></li>
+    </ul>
+    <p>copyright©2023 test 11 Power by Group</p></footer>
+
+</body>
+
+</html>

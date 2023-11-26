@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course Enrollment</title>
+<link id="stylesheet" rel="stylesheet" href="Style.css">
+
+</head>
+
+
+<body>
+    <header>
+
+      <div class="SSBB">  
+         
+        <div class="search">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <input type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button> 
+  </div>  
+  &nbsp  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <button id="switchButton" onclick="darkmode()">
+  <i id="icon" class="fas fa-moon"></i> 
+</button>
+
+  </div>
+
+	<img src ="Images/Kidugate.png" width="100" height="100" alt ="logo"> 
+        <h1>Kidugate</h1> 
+
+
+        <div class="nav-bar">  
+        <nav><ul>
+            <li><div class="c1"><a href="HomePage.html">Home </a></div></li>
+            <li><a href="Courses.html">Courses </a> </li>
+            <li><a href="Tutors.html">Tutors </a></li>
+            <li><a href="Admin.html">Admin </a></li>
+            <li><a href="Parent.html" id="clicked">Parent</a></li>
+        </ul></nav>
+        </div>
+
+    </header>
+
+
+<main>
+  <div class="path">
+    <ul>
+        <li><a href="HomePage.html">Home </a>><a href="Parent.html"> Parent </a>><a href="CourseEnrollment.html"> Course enrollment</a></li>
+    </ul>
+</div>
+<h2 style="text-indent:1%;"> Enroll in a course </h2>
+
+
+
+<form>
+
+
+  <!-- ... (your existing HTML) ... -->
+
+  <label for="childDropdown">Choose the kid you want to enroll:</label>
+  <select name="childDropdown" id="childDropdown" required>
+      <!-- Child names will be dynamically loaded here -->
+  </select>
+  <br><br>
+
+  <p>Filter by:</p>
+  <label for="Prerequisite">Prerequisite:</label>
+  <select id="Prerequisite" onchange="updateCourses()">
+      <optgroup label="Prerequisite"></optgroup>
+  </select>
+  <label for="tutor">Tutor:</label>
+  <select id="tutor" onchange="updateCourses()">
+      <optgroup label="Tutor"></optgroup>
+  </select>
+
+  <div class="courseCheackbox">
+      <ul>
+          <!-- Courses will be dynamically loaded here -->
+      </ul>
+  </div>
+
+  <input type="button" value="Enroll" onclick="enrollCourses()">
+  <div class="enrollment-info"></div>
+</form>
+
+
+
+</main>
+
+
+
+  
+
+    
+  <footer> 
+    
+    <ul>
+        <li><a href="Aboutus.html">About Us</a></li> 
+        <li><a href="Policy&Terms.html">Policy & Terms </a></li> 
+		<li><a href="ContactUs.html">Contact Us </a></li>
+        </ul>
+<p>copyright©2023 test 11 Power by Group</p></footer>
+<script src="js.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin</title>
+<link id="stylesheet" rel="stylesheet" href="Style.css">
+<script src="js.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="SSBB">  
+         
+            <div class="search">
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+      <input type="text" placeholder="Search..">
+      <button type="submit"><i class="fa fa-search"></i></button> 
+      </div>  
+      &nbsp  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <button id="switchButton" onclick="darkmode()">
+      <i id="icon" class="fas fa-moon"></i> 
+    </button>
+
+      </div>
+	<img src ="Images/Kidugate.png" width="100" height="100" alt ="logo"> 
+        <h1>Kidugate</h1> 
+
+        <div class="nav-bar">  
+        <nav><ul>
+            <li><div class="c1"><a href="HomePage.html">Home </a></div></li>
+            <li><a href="Courses.html">Courses </a> </li>
+            <li><a href="Tutors.html">Tutors </a></li>
+            <li ><a href="Admin.html" id="clicked">Admin </a></li>
+            <li><a href="Parent.html">Parent</a></li>
+        </ul></nav>
+        </div>
+
+    </header>
+
+<main>
+
+<div class="path">
+        <ul>
+            <li><a href="HomePage.html">Home </a>><a href="Admin.html"> Admin </a> </li>
+        </ul>
+</div>
+
+<h2 style="text-indent:1%;">  Administrator dashboard</h2>
+      <script>
+    var currentDate = new Date();
+    document.write("<div style='margin: 4%; padding: .2%; border: 2px solid #ff69b4; background-color: rgba(255, 255, 204, 0.4); color: #00ffcc; text-align: center; border-radius: 10px;'><h3>" + currentDate + "</h3></div>");
+	</script>
+<div class="ContainerForAll">
+
+<!--Registered kids--> 
+
+<div class="RigKidsBox">
+    <h2 class="list-heading">Registered Kids</h2>
+    <div class="Kscrollable-container">
+        <ul class="Kidslist">
+            <li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+			<li class="Klist-item">Student Name </li>
+        </ul>
+    </div>
+</div>
+
+<!--Courses-->
+<!--JS code for displaying more students-->
+       <script>
+    function toggleDropdown(index) {
+        var dropdownContent = document.querySelectorAll('.dropdown-content')[index];
+        dropdownContent.classList.toggle('show');
+
+        // Hide the "More..." link
+        var moreLink = document.querySelectorAll('.more-link')[index];
+        moreLink.style.display = 'none';
+    }
+
+    function showMoreStudents(index) {
+        var moreStudents = document.querySelectorAll('.more-students')[index];
+        moreStudents.style.display = 'block';
+
+        // Hide the "More..." link
+        var moreLink = document.querySelectorAll('.more-link')[index];
+        moreLink.style.display = 'none';
+	}
+	   </script>
+
+<div class="CoursesBox">
+    <h2 class="list-heading">Courses</h2>
+    <div class="Cscrollable-container">
+        <ul class="Courseslist">
+		
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button" onclick="toggleDropdown(0)">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+						<li class="more-students" style="display: none;">
+							<a class="dropdown-item" href="#">Student 6</a>
+							<a class="dropdown-item" href="#">Student 7</a>
+							<a class="dropdown-item" href="#">Student 8</a>
+							<a class="dropdown-item" href="#">Student 9</a>
+						</li>
+						<li><a class="dropdown-item more-link" href="javascript:void(0)" onclick="showMoreStudents(0)">More... </a></li>
+                    </ul>
+                </div>
+            </li> <!-- First Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button" onclick="toggleDropdown(1)">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+						<li class="more-students" style="display: none;">
+							<a class="dropdown-item" href="#">Student 6</a>
+							<a class="dropdown-item" href="#">Student 7</a>
+							<a class="dropdown-item" href="#">Student 8</a>
+							<a class="dropdown-item" href="#">Student 9</a>
+						</li>
+						<li><a class="dropdown-item more-link" href="javascript:void(1)" onclick="showMoreStudents(1)">More... </a></li>
+                    </ul>
+                </div>
+            </li> <!-- 2nd Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button" onclick="toggleDropdown(2)">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+						<li class="more-students" style="display: none;">
+							<a class="dropdown-item" href="#">Student 6</a>
+							<a class="dropdown-item" href="#">Student 7</a>
+							<a class="dropdown-item" href="#">Student 8</a>
+							<a class="dropdown-item" href="#">Student 9</a>
+						</li>
+						<li><a class="dropdown-item more-link" href="javascript:void(2)" onclick="showMoreStudents(2)">More... </a></li>
+                    </ul>
+                </div>
+            </li> <!-- 3rd Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 4th Item-->
+
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 5th Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 6th Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 7th Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 8th Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 9th Item-->
+			
+            <li class="Clist-item">Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructor
+                <div class="dropdown">
+                    <button class="dropdown-button">Registered Kids</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Kids:</li>
+                        <li><a class="dropdown-item" href="#">Student 1</a></li>
+                        <li><a class="dropdown-item" href="#">Student 2</a></li>
+                        <li><a class="dropdown-item" href="#">Student 3</a></li>
+                        <li><a class="dropdown-item" href="#">Student 4</a></li>
+                        <li><a class="dropdown-item" href="#">Student 5</a></li>
+                    </ul>
+                </div>
+            </li> <!-- 10th Item-->
+			
+        </ul>
+    </div>
+</div>
+
+<!--Tutors-->
+
+<div class="TutorsBox">
+    <h2 class="list-heading">Tutors</h2>
+    <div class="Tscrollable-container">
+        <ul class="Tutorslist">
+
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+
+            <li class="Tlist-item"><a href="Schedule2.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				 
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+				
+            <li class="Tlist-item"><a href="Schedule1.html">Tutor Name</a>
+			  <div class="dropdown">
+                    <button class="dropdown-button">&nbsp;&nbsp;&nbsp;&nbsp;Courses&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-heading">Courses:</li>
+                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#">Course 3</a></li>
+                        <li><a class="dropdown-item" href="#">Course 4</a></li>
+                        <li><a class="dropdown-item" href="#">Course 5</a></li>
+                    </ul>
+                </div></li>
+        </ul>
+    </div>
+</div>
+</div><!--Closes conatainer for all-->
+
+</main>
+
+<footer> 
+    
+    <ul>
+        <li><a href="Aboutus.html">About Us</a></li> 
+        <li><a href="Policy&Terms.html">Policy & Terms </a></li> 
+		<li><a href="ContactUs.html">Contact Us </a></li>
+        </ul>
+<p>copyright©2023 test 11 Power by Group</p></footer>
+
+</body>
+
+</html>

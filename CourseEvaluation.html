@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course Evaluation</title>
+<link id="stylesheet" rel="stylesheet" href="Style.css">
+<script src="js.js"></script>
+</head>
+
+
+<body>
+    <header>
+      <div class="SSBB">  
+         
+        <div class="search">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <input type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button> 
+  </div>  
+  &nbsp  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <button id="switchButton" onclick="darkmode()">
+  <i id="icon" class="fas fa-moon"></i> 
+</button>
+
+  </div>
+
+	<img src ="Images/Kidugate.png" width="100" height="100" alt ="logo"> 
+        <h1>Kidugate</h1> 
+
+
+        <div class="nav-bar">  
+        <nav><ul>
+            <li><div class="c1"><a href="HomePage.html">Home </a></div></li>
+            <li><a href="Courses.html">Courses </a> </li>
+            <li><a href="Tutors.html">Tutors </a></li>
+            <li><a href="Admin.html">Admin </a></li>
+            <li><a href="Parent.html" id="clicked">Parent</a></li>
+        </ul></nav>
+        </div>
+
+    </header>
+	
+<main>
+ <div class="path">
+    <ul>
+        <li><a href="HomePage.html">Home </a>><a href="Parent.html"> Parent </a>><a href="CourseEvaluation.html"> Course Evaluation</a></li>
+    </ul>
+</div>
+
+<h2 style="text-indent:1%;"> Evaluate a course </h2>
+
+<form id="corseEvaluation">
+
+
+
+<label for="sCourse">Select a course:</label>
+        <select name="sCourse" id="sCourse" required>
+          </select>
+		  
+		  <p>Rate:</p>
+<div>
+  <input type="radio" id="star5" name="rating" value="5">
+  <label for="star5">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  </label>
+</div>
+
+<div>
+  <input type="radio" id="star4" name="rating" value="4">
+  <label for="star4">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  </label>
+</div>
+
+<div>
+  <input type="radio" id="star3" name="rating" value="3">
+  <label for="star3">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  </label>
+</div>
+
+<div>
+  <input type="radio" id="star2" name="rating" value="2">
+  <label for="star2">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  </label>
+</div>
+
+<div>
+  <input type="radio" id="star1" name="rating" value="1">
+  <label for="star1">
+  <span class="fa fa-star checked"></span>
+  </label>
+</div>
+
+<p>Feedback:</p>
+     <textarea name="message" rows="6" cols="64"  placeholder="Type your feedback here please!"></textarea>
+	 
+	 
+	<p><label for="upFile">Upload a file:</label>
+        <input type="file" id="upFile" name="upFile">
+        </p>
+		
+<input type="submit" value="Send">
+</form>
+
+</main>
+	
+	
+	
+	
+	
+
+
+<footer> 
+    
+    <ul>
+        <li><a href="Aboutus.html">About Us</a></li> 
+        <li><a href="Policy&Terms.html">Policy & Terms </a></li> 
+		<li><a href="ContactUs.html">Contact Us </a></li>
+        </ul>
+<p>copyright©2023 test 11 Power by Group</p></footer>
+
+</body>
+</html>

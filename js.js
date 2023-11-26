@@ -160,26 +160,55 @@ const coursesArray = [
 
 
 function loadChildren() {
-    var parentSection = document.querySelector('.section');
+  var parentSection = document.querySelector('.section');
 
-    if (!parentSection) {
-        console.error("Parent section not found.");
-        return;
-    }
+  if (!parentSection) {
+      console.error("Parent section not found.");
+      return;
+  }
 
-    // Retrieve children from local storage
-    var children = JSON.parse(localStorage.getItem("children")) || [];
+  // Retrieve children from local storage
+  var children = JSON.parse(localStorage.getItem("children")) || [];
 
-    // Clear existing content in the parent section
-    parentSection.innerHTML = '';
+  // Check if local storage is empty, and add default children
+  if (children.length === 0) {
+      // Add default children (Ahmad and Sara)
+      var defaultChildren = [
+          {
+              name: "Ahmad",
+              dob: "2000-01-01",
+              gender: "Male",
+              email: "ahmad@example.com",
+              phone: "1234567890",
+              image: "Images/default-boy-image.jpg"
+          },
+          {
+              name: "Sara",
+              dob: "2005-05-05",
+              gender: "Female",
+              email: "sara@example.com",
+              phone: "9876543210",
+              image: "Images/default-girl-image.jpg"
+          }
+      ];
 
-    // Display children in Parent Dashboard
-    children.forEach(function (child) {
-        var childItem = document.createElement("div");
-        childItem.classList.add("section__item");
-        childItem.innerHTML = '<img src="' + child.image + '"width="100" height="100" alt="kid"><p>' + child.name + '</p>';
-        parentSection.appendChild(childItem);
-    });
+      // Update local storage with default children
+      localStorage.setItem("children", JSON.stringify(defaultChildren));
+
+      // Update the 'children' variable
+      children = defaultChildren;
+  }
+
+  // Clear existing content in the parent section
+  parentSection.innerHTML = '';
+
+  // Display children in Parent Dashboard
+  children.forEach(function (child) {
+      var childItem = document.createElement("div");
+      childItem.classList.add("section__item");
+      childItem.innerHTML = '<img src="' + child.image + '" width="100" height="100" alt="kid"><p>' + child.name + '</p>';
+      parentSection.appendChild(childItem);
+  });
 }
 
 // Call the loadChildren function when the Parent Dashboard page is loaded

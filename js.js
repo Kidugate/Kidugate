@@ -171,28 +171,28 @@ function loadChildren() {
   var children = JSON.parse(localStorage.getItem("children")) || [];
 
   // Check if Ahmad and Sara are already present, if not, add them
-  var ahmadExists = children.some(child => child.name === 'Ahmad');
+  var AliExists = children.some(child => child.name === 'Ali');
   var saraExists = children.some(child => child.name === 'Sara');
 
-  if (!ahmadExists) {
+  if (!AliExists) {
       children.push({
-          name: 'Ahmad',
+          name: 'Ali',
           dob: '2005-01-01',
-          gender: 'Male', 
-          email: 'ahmad@example.com', 
-          phone: '1234567890', 
-          image: 'Images/kid.png' 
+          gender: 'Male',
+          email: 'Ali@example.com',
+          phone: '1234567890',
+          image: 'Images/kid.png'
       });
   }
 
   if (!saraExists) {
       children.push({
           name: 'Sara',
-          dob: '2006-02-02', 
-          gender: 'Female', 
-          email: 'sara@example.com', 
-          phone: '9876543210', 
-          image: 'Images/kid2.png' 
+          dob: '2006-02-02',
+          gender: 'Female',
+          email: 'sara@example.com',
+          phone: '9876543210',
+          image: 'Images/kid2.png'
       });
   }
 
@@ -211,6 +211,11 @@ function loadChildren() {
   });
 }
 
+// Ensure the DOM is fully loaded before calling the function
+document.addEventListener("DOMContentLoaded", function () {
+  loadChildren();
+});
+
 // Call the loadChildren function when the Parent Dashboard page is loaded
 function loadChildNames() {
     var childSelect = document.getElementById("childDropdown");
@@ -228,6 +233,7 @@ function loadChildNames() {
 
     populateFilters() 
 }
+
 
 
 

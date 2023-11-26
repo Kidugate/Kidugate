@@ -101,63 +101,107 @@ function registerChild() {
 
 // Define a multidimensional array for courses
 const coursesArray = [
-    {
-        name: "Robot",
-        tutor: "T.Mohammed",
-        prerequisites: "none",
-        image: "Images/Robot.png"
-    },
-    {
-        name: "HTML",
-        tutor: "T.Maha",
-        prerequisites: "UX",
-        image: "Images/html5.png"
-    },
-    {
-        name: "Scratch",
-        tutor: "T.Maha",
-        prerequisites: "none",
-        image: "Images/scratch.png"
-    },
-    {
-        name: "Java",
-        tutor: "T.Nasser",
-        prerequisites: "python",
-        image: "Images/java.png"
-    },
-    {
-        name: "C++",
-        tutor: "T.Nasser",
-        prerequisites: "Java",
-        image: "Images/c-logo.png"
-    },
-    {
-        name: "drone",
-        tutor: "T.Mohammed",
-        prerequisites: "robot",
-        image: "Images/drone.png"
-    },
-    {
-        name: "python",
-        tutor: "T.Sara",
-        prerequisites: "scratch",
-        image: "Images/python.png"
-    },
-    {
-        name: "unity",
-        tutor: "T.Faris",
-        prerequisites: "C++",
-        image: "Images/unity.png"
-    },
-    {
-        name: "UX",
-        tutor: "T.Maha",
-        prerequisites: "none",
-        image: "Images/ux.png"
-    }
+  {
+      name: "Robot",
+      tutor: "T.Mohammed",
+      prerequisites: "none",
+      image: "Images/Robot.png",
+      rate: 5,
+      description: "Learn the fundamentals of robotics and programming a robot.",
+      timeSlot: "Mondays and Wednesdays, 3:00 PM - 4:30 PM",
+      currentTutor: "T.Mohammed",
+      objectives: ["Understand basic robotics principles", "Program a robot to perform tasks"]
+  },
+  {
+      name: "HTML",
+      tutor: "T.Maha",
+      prerequisites: "UX",
+      image: "Images/html5.png",
+      rate: 4,
+      description: "Introduction to HTML and web development.",
+      timeSlot: "Tuesdays and Thursdays, 2:00 PM - 3:30 PM",
+      currentTutor: "T.Maha",
+      objectives: ["Create web pages using HTML", "Understand web development concepts"]
+  },
+  {
+      name: "Scratch",
+      tutor: "T.Maha",
+      prerequisites: "none",
+      image: "Images/scratch.png",
+      rate: 3,
+      description: "Learn programming concepts through visual programming language Scratch.",
+      timeSlot: "Wednesdays and Fridays, 4:00 PM - 5:30 PM",
+      currentTutor: "T.Maha",
+      objectives: ["Understand basic programming concepts", "Create interactive projects using Scratch"]
+  },
+  {
+      name: "Java",
+      tutor: "T.Nasser",
+      prerequisites: "python",
+      image: "Images/java.png",
+      rate: 5,
+      description: "Java programming for beginners.",
+      timeSlot: "Mondays and Thursdays, 4:30 PM - 6:00 PM",
+      currentTutor: "T.Nasser",
+      objectives: ["Learn Java syntax and programming fundamentals", "Develop simple Java applications"]
+  },
+  {
+      name: "C++",
+      tutor: "T.Nasser",
+      prerequisites: "Java",
+      image: "Images/c-logo.png",
+      rate: 4,
+      description: "Advanced programming with C++.",
+      timeSlot: "Tuesdays and Fridays, 3:30 PM - 5:00 PM",
+      currentTutor: "T.Nasser",
+      objectives: ["Explore advanced C++ features", "Build complex applications with C++"]
+  },
+  {
+      name: "Drone",
+      tutor: "T.Mohammed",
+      prerequisites: "robot",
+      image: "Images/drone.png",
+      rate: 4,
+      description: "Introduction to drone technology and programming.",
+      timeSlot: "Thursdays and Saturdays, 2:30 PM - 4:00 PM",
+      currentTutor: "T.Mohammed",
+      objectives: ["Understand drone technology", "Program a drone for specific tasks"]
+  },
+  {
+      name: "Python",
+      tutor: "T.Sara",
+      prerequisites: "scratch",
+      image: "Images/python.png",
+      rate: 5,
+      description: "Python programming for beginners.",
+      timeSlot: "Mondays and Wednesdays, 5:30 PM - 7:00 PM",
+      currentTutor: "T.Sara",
+      objectives: ["Learn Python syntax and programming fundamentals", "Develop simple Python applications"]
+  },
+  {
+      name: "Unity",
+      tutor: "T.Faris",
+      prerequisites: "C++",
+      image: "Images/unity.png",
+      rate: 3,
+      description: "Introduction to game development with Unity.",
+      timeSlot: "Tuesdays and Thursdays, 6:00 PM - 7:30 PM",
+      currentTutor: "T.Faris",
+      objectives: ["Understand Unity game development environment", "Create basic 2D and 3D games"]
+  },
+  {
+      name: "UX",
+      tutor: "T.Maha",
+      prerequisites: "none",
+      image: "Images/ux.png",
+      rate: 4,
+      description: "User Experience (UX) design principles.",
+      timeSlot: "Wednesdays and Fridays, 5:00 PM - 6:30 PM",
+      currentTutor: "T.Maha",
+      objectives: ["Understand UX design principles", "Create user-friendly interfaces"]
+  }
+  
 ];
-
-
 
 function loadChildren() {
   var parentSection = document.querySelector('.section');
@@ -293,8 +337,7 @@ function loadChildNames() {
       li.innerHTML =
         '<input type="checkbox" name="courses" value="' +
         course.name +
-        '"> ' +
-        course.name +
+        '"> ' + '<img src='+course.image+' alt=course width=50 height=50>'+course.name +
         ' - ' +
         course.tutor;
       courseCheckboxList.appendChild(li);
@@ -380,6 +423,98 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Other code...
+
+    // Function to dynamically load courses
+    function loadCourses() {
+        var bigCoursesContainer = document.querySelector('.Bigcourses-container');
+
+        // Clear existing content in the bigCoursesContainer
+        bigCoursesContainer.innerHTML = '';
+
+        // Iterate through each course in coursesArray
+        coursesArray.forEach(function (course) {
+            // Create elements for each course
+            var courseContainer = document.createElement('div');
+            courseContainer.classList.add('courses-container');
+
+            var courseItem = document.createElement('div');
+            courseItem.classList.add('course');
+
+            var img = document.createElement('img');
+            img.src = course.image;
+            img.alt = course.name;
+            img.width = 80;
+            img.height = 80;
+
+            var h2 = document.createElement('h2');
+            h2.textContent = course.name;
+
+            var rate = document.createElement('p');
+            rate.innerHTML = 'Rate';
+            for (let i = 0; i < course.rate; i++) {
+                var star = document.createElement('span');
+                star.classList.add('fa', 'fa-star', 'checked');
+                rate.appendChild(star);
+            }
+
+            var courseDetails = document.createElement('div');
+            courseDetails.classList.add('course-details');
+
+            var description = document.createElement('h3');
+            description.textContent = 'Course Description:';
+            var descriptionText = document.createElement('p');
+            descriptionText.textContent = course.description;
+
+            var timeSlot = document.createElement('h3');
+            timeSlot.textContent = 'Time Slot:';
+            var timeSlotText = document.createElement('p');
+            timeSlotText.textContent = course.timeSlot;
+
+            var currentTutor = document.createElement('h3');
+            currentTutor.textContent = 'Current Tutor:';
+            var currentTutorText = document.createElement('p');
+            currentTutorText.textContent = course.currentTutor;
+
+            var objectives = document.createElement('h3');
+            objectives.textContent = 'Expected Objectives:';
+            var objectivesList = document.createElement('ul');
+            course.objectives.forEach(function (objective) {
+                var li = document.createElement('li');
+                li.textContent = objective;
+                objectivesList.appendChild(li);
+            });
+
+            // Append elements to the courseDetails
+            description.appendChild(descriptionText);
+            timeSlot.appendChild(timeSlotText);
+            currentTutor.appendChild(currentTutorText);
+            objectives.appendChild(objectivesList);
+
+            courseDetails.appendChild(description);
+            courseDetails.appendChild(timeSlot);
+            courseDetails.appendChild(currentTutor);
+            courseDetails.appendChild(objectives);
+
+            // Append elements to the courseItem
+            courseItem.appendChild(img);
+            courseItem.appendChild(h2);
+            courseItem.appendChild(rate);
+            courseItem.appendChild(courseDetails);
+
+            // Append courseItem to the courseContainer
+            courseContainer.appendChild(courseItem);
+
+            // Append courseContainer to the bigCoursesContainer
+            bigCoursesContainer.appendChild(courseContainer);
+        });
+    }
+
+    // Call the loadCourses function when the page is loaded
+    loadCourses();
+});
+
 
 
 // Populate courses and child names when the page is loaded
@@ -398,4 +533,5 @@ window.onload = function () {
     loadChildNames();
     updateCourses();
     populateFilters() ;
+    loadCourses() 
 };

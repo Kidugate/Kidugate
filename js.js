@@ -193,7 +193,7 @@ const coursesArray = [
       name: "UX",
       tutor: "T.Maha",
       prerequisites: "none",
-      image: "Images/ux.png",
+      image: "Images/UX.png",
       rate: 4,
       description: "User Experience (UX) design principles.",
       timeSlot: "Wednesdays and Fridays, 5:00 PM - 6:30 PM",

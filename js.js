@@ -176,7 +176,7 @@ function loadChildren() {
 
   if (!ahmadExists) {
       children.push({
-          name: 'Ahmad',
+          name: 'Ali',
           dob: '2005-01-01',
           gender: 'Male', 
           email: 'ahmad@example.com', 

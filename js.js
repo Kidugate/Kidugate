@@ -170,34 +170,34 @@ function loadChildren() {
   // Retrieve children from local storage
   var children = JSON.parse(localStorage.getItem("children")) || [];
 
-  // Check if local storage is empty, and add default children
-  if (children.length === 0) {
-      // Add default children (Ahmad and Sara)
-      var defaultChildren = [
-          {
-              name: "Ahmad",
-              dob: "2000-01-01",
-              gender: "Male",
-              email: "ahmad@example.com",
-              phone: "1234567890",
-              image: "Images/kid.png"
-          },
-          {
-              name: "Sara",
-              dob: "2005-05-05",
-              gender: "Female",
-              email: "sara@example.com",
-              phone: "9876543210",
-              image: "Images/kid2.png"
-          }
-      ];
+  // Check if Ahmad and Sara are already present, if not, add them
+  var ahmadExists = children.some(child => child.name === 'Ahmad');
+  var saraExists = children.some(child => child.name === 'Sara');
 
-      // Update local storage with default children
-      localStorage.setItem("children", JSON.stringify(defaultChildren));
-
-      // Update the 'children' variable
-      children = defaultChildren;
+  if (!ahmadExists) {
+      children.push({
+          name: 'Ahmad',
+          dob: '2005-01-01',
+          gender: 'Male', 
+          email: 'ahmad@example.com', 
+          phone: '1234567890', 
+          image: 'Images/kid.png' 
+      });
   }
+
+  if (!saraExists) {
+      children.push({
+          name: 'Sara',
+          dob: '2006-02-02', 
+          gender: 'Female', 
+          email: 'sara@example.com', 
+          phone: '9876543210', 
+          image: 'Images/kid2.png' 
+      });
+  }
+
+  // Save the updated children array to local storage
+  localStorage.setItem("children", JSON.stringify(children));
 
   // Clear existing content in the parent section
   parentSection.innerHTML = '';
@@ -206,7 +206,7 @@ function loadChildren() {
   children.forEach(function (child) {
       var childItem = document.createElement("div");
       childItem.classList.add("section__item");
-      childItem.innerHTML = '<img src="' + child.image + '" width="100" height="100" alt="kid"><p>' + child.name + '</p>';
+      childItem.innerHTML = '<img src="' + child.image + '"width="100" height="100" alt="kid"><p>' + child.name + '</p>';
       parentSection.appendChild(childItem);
   });
 }

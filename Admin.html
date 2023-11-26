@@ -48,10 +48,17 @@
 </div>
 
 <h2 style="text-indent:1%;">  Administrator dashboard</h2>
-      <script>
-    var currentDate = new Date();
-    document.write("<div style='margin: 4%; padding: .2%; border: 2px solid #ff69b4; background-color: rgba(255, 255, 204, 0.4); color: #00ffcc; text-align: center; border-radius: 10px;'><h3>" + currentDate + "</h3></div>");
-	</script>
+<script> 
+    var currentDate = new Date(); 
+    var firstDayOfWeek = new Date(currentDate); 
+    firstDayOfWeek.setDate(currentDate.getDate() - currentDate.getDay()); 
+ 
+    // Formatting the date 
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; 
+    var formattedDate = firstDayOfWeek.toLocaleDateString('en-US', options); 
+ 
+    document.write("<div style='margin: 4%; padding: .2%; border: 2px solid #ff69b4; background-color: rgba(255, 255, 204, 0.4); color: #00ffcc; text-align: center; border-radius: 10px;'><h3>" + formattedDate + "</h3></div>"); 
+</script>
 <div class="ContainerForAll">
 
 <!--Registered kids--> 
